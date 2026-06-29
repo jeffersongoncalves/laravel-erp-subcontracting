@@ -1,0 +1,81 @@
+{
+    "name": "jeffersongoncalves/laravel-erp-subcontracting",
+    "description": "ERP subcontracting — subcontracting BOMs, orders and receipts for the Laravel ERP ecosystem",
+    "keywords": [
+        "laravel",
+        "erp",
+        "subcontracting",
+        "manufacturing",
+        "purchase-order",
+        "submittable"
+    ],
+    "homepage": "https://github.com/jeffersongoncalves/laravel-erp-subcontracting",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Jefferson Gonçalves",
+            "email": "gerson.simao.92@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/contracts": "^11.0|^12.0|^13.0",
+        "illuminate/database": "^11.0|^12.0|^13.0",
+        "illuminate/events": "^11.0|^12.0|^13.0",
+        "illuminate/support": "^11.0|^12.0|^13.0",
+        "jeffersongoncalves/laravel-erp-accounting": "dev-main",
+        "jeffersongoncalves/laravel-erp-buying": "dev-main",
+        "jeffersongoncalves/laravel-erp-core": "dev-main",
+        "jeffersongoncalves/laravel-erp-manufacturing": "dev-main",
+        "jeffersongoncalves/laravel-erp-stock": "dev-main",
+        "spatie/laravel-package-tools": "^1.15"
+    },
+    "require-dev": {
+        "larastan/larastan": "^2.9|^3.0",
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^8.0",
+        "orchestra/testbench": "^9.0|^10.0|^11.0",
+        "pestphp/pest": "^3.0|^4.0",
+        "pestphp/pest-plugin-laravel": "^3.0|^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JeffersonGoncalves\\Erp\\Subcontracting\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JeffersonGoncalves\\Erp\\Subcontracting\\Tests\\": "tests/",
+            "JeffersonGoncalves\\Erp\\Subcontracting\\Database\\Factories\\": "database/factories/",
+            "JeffersonGoncalves\\Erp\\Core\\Database\\Factories\\": "vendor/jeffersongoncalves/laravel-erp-core/database/factories/",
+            "JeffersonGoncalves\\Erp\\Accounting\\Database\\Factories\\": "vendor/jeffersongoncalves/laravel-erp-accounting/database/factories/",
+            "JeffersonGoncalves\\Erp\\Stock\\Database\\Factories\\": "vendor/jeffersongoncalves/laravel-erp-stock/database/factories/",
+            "JeffersonGoncalves\\Erp\\Buying\\Database\\Factories\\": "vendor/jeffersongoncalves/laravel-erp-buying/database/factories/",
+            "JeffersonGoncalves\\Erp\\Manufacturing\\Database\\Factories\\": "vendor/jeffersongoncalves/laravel-erp-manufacturing/database/factories/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JeffersonGoncalves\\Erp\\Subcontracting\\ErpSubcontractingServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint",
+        "analyse": "vendor/bin/phpstan analyse"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
